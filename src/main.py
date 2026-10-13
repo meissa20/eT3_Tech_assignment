@@ -92,6 +92,9 @@ def export_trips_summary(trips, filename):
 
 if __name__ == "__main__":
     deliveries = read_deliveries('../data/deliveries.csv')
+    if (not deliveries):
+        print("No valid deliveries found in the input file.")
+        exit(1)
     valid, oversized = validate_deliveries(deliveries)
     valid = sort_deliveries(valid)
 
